@@ -1,7 +1,10 @@
 <?php
-$servername = "localhost:3307";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$servername = "localhost";
 $username = "root";
-$password = " ";
+$password = "";
 $dbname = "salon_elegance";
 
 // Create connection
@@ -11,20 +14,19 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+echo "Connected successfully<br>";
 
-$sql = "SELECT name, price, description, image FROM products";
+// Test query
+$sql = "SELECT * FROM products";
 $result = $conn->query($sql);
 
-$products = [];
-
 if ($result->num_rows > 0) {
+    // Output data of each row
     while($row = $result->fetch_assoc()) {
-        $products[] = $row;
+        echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. "<br>";
     }
+} else {
+    echo "0 results";
 }
-
 $conn->close();
-
-header('Content-Type: application/json');
-echo json_encode($products);
 ?>
