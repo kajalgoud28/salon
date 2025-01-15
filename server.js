@@ -1,13 +1,21 @@
 const express = require('express');
 const app = express();
-
-// Use process.env.PORT if available, otherwise default to 3000
+const path = require('path');
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
+// Serve static files (frontend)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// API or backend routes
+app.get('/api', (req, res) => {
+    res.json({ message: 'API is working' });
 });
 
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Server running on http://0.0.0.0:${port}`);
+// Fallback for all other routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
