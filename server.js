@@ -14,7 +14,7 @@ app.get('/api', (req, res) => {
 
 // Fallback for all other routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.php'));
 
 });
 
