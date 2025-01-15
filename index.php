@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salon Elegance</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/services.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hero.css">
     <!-- Material Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
     <header>
     <div class="header-container">
         <div class="logo">
-            <img src="image/logo.png" alt="Salon Elegance logo" class="logo-img">
+            <img src="logo.png" alt="Salon Elegance logo" class="logo-img">
         </div>
         <nav class="main-nav">
         <div class="salon-info">
