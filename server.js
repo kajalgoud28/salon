@@ -4,7 +4,8 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 
 // Serve static files (frontend)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
+
 
 // API or backend routes
 app.get('/api', (req, res) => {
@@ -13,7 +14,8 @@ app.get('/api', (req, res) => {
 
 // Fallback for all other routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
+
 });
 
 app.listen(port, () => {
